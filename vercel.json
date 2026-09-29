@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://GANTI-NAMA-BACKEND.vercel.app/api/$1" },
+    { "source": "/api/(.*)", "destination": "https://backend-ten-sepia-92.vercel.app/api/$1" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
