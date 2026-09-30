@@ -23,7 +23,9 @@ const router = createRouter({
 })
 
 router.beforeEach(async (to) => {
-  if (!auth.ready) await loadUser()
+   const perluCekLogin = to.meta.auth || to.meta.guest
+  if (perluCekLogin && !auth.ready) await loadUser()
+  else if (!auth.ready) loadUser()
   if (to.meta.auth && !auth.user) return '/masuk'
   if (to.meta.student && auth.user.role !== 'siswa') return '/dashboard'
   if (to.meta.guest && auth.user) return '/dashboard'
